@@ -6,23 +6,26 @@ background-color: lavenderblush;
 color:palevioletred; 
 }
 
-.buttons {
-width: auto;
+button {
 margin-top: 1%;
-padding-left: 20%;
-padding-right: 20%;
+width: 290px;
+text-align: center;
+color: palevioletred; 
+background-color: pink;
+border-color: whitesmoke;
 }
 
-.greetingcard {
-margin-top: 7%;
+#greetingCard {
+    margin-top: 30px;
 }
 
-
-.btn-primary {
-    color: palevioletred; 
-    background-color: pink;
-    border-color: whitesmoke;
-    box-shadow: none  
-    hover: pink; 
+img {
+    padding-top: 1%;
+width: 350px;
+height: auto;
 }
 
+#answer-label {
+color: gray;
+padding-top: 2%;
+}

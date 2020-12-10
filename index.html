@@ -18,56 +18,40 @@
         @import url('https://fonts.googleapis.com/css2?family=Castoro&display=swap');
         </style>
 
+
+
+
+<h1>Gift Guide</h1>
+
+<div id="formdiv">
+  <input id="myDate" type="date">
+  <button onclick="window.initializeClock('clockdiv', 'myDate')">Start</button>
+  <label for="cars">Choose a date:</label>
+
+<select name="dates" id="dates">
+  <option value="age_1">0 - 30</option>
+  <option value="age_2">30 - 50</option>
+  <option value="age_3">50+</option>
+</select>
+  <button id="test-me">TEST</button>
+  
+</div>
+<div id="clockdiv"></div>
+
+
+
 <div id="container" 
-
-
 ></div>
 
 
-<div class="buttons">
-    <h1>Gift Guide</h1>
 
-    <button id='grad-btn'>Graduation</button>
-    <div id="grad-div"></div>
-    
-    <button id='50th-btn'>50th Birthday</button>
-    <div id="50-div"></div>
+<div id="greetingCard"
+<p>Need some inspiraiton for a message on the card?</p>
+    <button id="call-api-btn">Go!</button>
+      </div>
 
-    <button id='21st-btn'>21st Birthday</button>
-    <div id="21-div"></div>
+      <p id="answer-label"></p>
 
-    <button id='30th-btn'>30th Birthday</button>
-    <div id="30-div"></div>
-
-    <button id='anniversary-btn'>Anniversary</button>
-    <div id="anniversary-div"></div>
-
-    <button id='wedding-btn'>Wedding</button>
-    <div id="wedding-div"></div>
-
-    <button id='house-btn'>Housewarming</button>
-    <div id="house-div"></div>
-
-    <button id='baby-btn'>New Baby</button>
-    <div id="baby-div"></div>
-
-    <button id='valentines-day-btn'>Valentine's Day</button>
-    <div id="valentines-div"></div>
-
-    <button id='mothers-day-btn'>Mother's Day</button>
-    <div id="mum-div"></div>
-
-    <button id='fathers-day-btn'>Father's Day</button>
-    <div id="dad-div"></div>
-   
-      <button type="button" class="btn btn-primary btn-lg btn-block" id="fathers-day-btn">Father's Day</button>
-
-
-      <div class="greetingcard">
-      <p>Spice up your card with an inspirational quote</p>
-      <button type="button" class="btn btn-primary btn-lg btn-block" id="call-api-btn">Go!</button>
-</div>
-</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="./app.js"></script>
