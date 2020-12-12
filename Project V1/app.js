@@ -5,16 +5,30 @@ let select = document.getElementById("selectOcc");
 let options = ["New Baby", "Graduation", "House Warming", "Wedding", "Anniversary", "21st Birthday", "30th Birthday", "50th Birthday" ]; 
 
 for(let i = 0; i < options.length; i++) {
-    let opt = options[i];
-    let el = document.createElement("option");
-   
-   // these lines allow the values to be displayed, without it is a dropdown with white space only. 
-    el.text = opt;
-    //el.value = opt;
-    
-    select.add(el); };
+  let opt = options[i];
+  let el = document.createElement("option");
+ // these lines allow the values to be displayed, without it is a dropdown with white space only. 
+el.text = opt;
+el.value = opt;
+select.add(el); 
+console.log(el);
+};
 
-    $("#call-api-btn").on("click", () => {
+options.forEach((opt) => { 
+      
+      const $button = $(`<option>${opt}</option>`); 
+      console.log("hello"); 
+     
+      $("#selectOcc").click( () => {
+       // $(`${opt}`).select(); 
+        console.log(`${opt}`); 
+        $("#container").append(opt);
+      });
+      })
+
+      
+
+/*$("#call-api-btn").on("click", () => {
       console.log("Call api button was clicked!");
     
       const randomQuote = $.get(`https://api.quotable.io/random`, (data) => {
@@ -88,10 +102,3 @@ images.forEach((el) => {
   });
 });
 */
-
-
-
-
-
-
-
