@@ -1,0 +1,45 @@
+body {
+    text-align: center;
+    background-color: lavenderblush;
+    font-family: 'Castoro', serif;
+    color: palevioletred;
+}
+
+h1 {
+    padding-top: 5px;
+    margin-top: 15px;
+    padding-bottom: 2%;
+    
+}
+
+.box {
+    padding-top: 2%;
+    color: palevioletred;
+    padding: 20px;
+    display: none;
+    margin-top: 20px;
+}
+
+#greetingCard {
+    text-align: center;
+    color: palevioletred;  
+}
+
+#call-api-btn {
+    color: white;
+    background-color: palevioletred;   
+}
+
+#answer-label {
+    margin-top: 1%;
+    padding-bottom: 1%;  
+    color: black;
+}
+
+#days, #hours, #minutes, #seconds {
+  font-size: 25px;
+  color:palevioletred;
+}
+
+.countdown, #days {
+}

@@ -1,12 +1,12 @@
 console.log("app is running");
 
-window.initializeClock = function(clockId, dateId) {
-  var getTimeRemaining = function(endtime) {
-      var t = Date.parse(endtime) - (new Date()).getTime();
-      var seconds = Math.floor( (t/1000) % 60 );
-      var minutes = Math.floor( (t/1000/60) % 60);
-      var hours = Math.floor( (t/(1000*60*60)) % 24);
-      var days = Math.floor( t/(1000*60*60*24) );
+/* window.initializeClock = function(clockId, dateId) {
+  let getTimeRemaining = function(endtime) {
+    let t = Date.parse(endtime) - (new Date()).getTime();
+    let seconds = Math.floor( (t/1000) % 60 );
+    let minutes = Math.floor( (t/1000/60) % 60);
+    let hours = Math.floor( (t/(1000*60*60)) % 24);
+    let days = Math.floor( t/(1000*60*60*24) );
       return {
           'total': t,
           'days': days,
@@ -16,17 +16,17 @@ window.initializeClock = function(clockId, dateId) {
       };
   }
 
-  var clock = document.getElementById(clockId);
-  var deadline = document.getElementById(dateId).value;
-  var timeinterval = setInterval(function(){
-      var t = getTimeRemaining(deadline);
+  let clock = document.getElementById(clockId);
+  let deadline = document.getElementById(dateId).value;
+  let timeinterval = setInterval(function(){
+    let t = getTimeRemaining(deadline);
       clock.innerHTML = 'days: ' + t.days + '<br>' + 'hours: ' + t.hours + '<br>' + 'minutes: ' + t.minutes + '<br>' + 'seconds: ' + t.seconds;
       if(t.total<=0){
           clearInterval(timeinterval);
       }
   }, 1000);
 }
-
+*/
 
 const images = [
   {
@@ -105,6 +105,8 @@ $("#test-me").on("click", () => {
   console.log("this button works!")
   const input = $("#dates").val();
   console.log(input);
+  $("#age-label").append(input);
   
 })
+
 

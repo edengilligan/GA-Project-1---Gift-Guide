@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="./style.css"></link>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="/bower_components/jquery.countdown/dist/jquery.countdown.js"></script>
     
   </head>
   <body>
@@ -19,31 +20,30 @@
         </style>
 
 
-
-
 <h1>Gift Guide</h1>
 
-<div id="formdiv">
+<!--  <div id="formdiv"> 
   <input id="myDate" type="date">
   <button onclick="window.initializeClock('clockdiv', 'myDate')">Start</button>
-  <label for="cars">Choose a date:</label>
+
+
+-->
+
+  <label for="options">Choose an occasion:</label>
 
 <select name="dates" id="dates">
-  <option value="age_1">0 - 30</option>
-  <option value="age_2">30 - 50</option>
-  <option value="age_3">50+</option>
+  <option value="grad">Graduation</option>
+  <option value="21">21st Birthday</option>
+  <option value="50">50th Birthday</option>
+  <option value="anniversary">Anniversary</option>
+  <option value="wedding">Wedding</option>
+  <option value="house warming">House Warming</option>
+  <option value="baby">New Baby</option>
 </select>
-  <button id="test-me">TEST</button>
-  
-</div>
-<div id="clockdiv"></div>
-
-
+  <button id="test-me">Go!</button>
 
 <div id="container" 
 ></div>
-
-
 
 <div id="greetingCard"
 <p>Need some inspiraiton for a message on the card?</p>
@@ -51,6 +51,7 @@
       </div>
 
       <p id="answer-label"></p>
+      <p id="age-label"></p>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
