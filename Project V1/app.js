@@ -1,33 +1,30 @@
 console.log("app is running");
 
-/* window.initializeClock = function(clockId, dateId) {
-  let getTimeRemaining = function(endtime) {
-    let t = Date.parse(endtime) - (new Date()).getTime();
-    let seconds = Math.floor( (t/1000) % 60 );
-    let minutes = Math.floor( (t/1000/60) % 60);
-    let hours = Math.floor( (t/(1000*60*60)) % 24);
-    let days = Math.floor( t/(1000*60*60*24) );
-      return {
-          'total': t,
-          'days': days,
-          'hours': hours,
-          'minutes': minutes,
-          'seconds': seconds
-      };
-  }
 
-  let clock = document.getElementById(clockId);
-  let deadline = document.getElementById(dateId).value;
-  let timeinterval = setInterval(function(){
-    let t = getTimeRemaining(deadline);
-      clock.innerHTML = 'days: ' + t.days + '<br>' + 'hours: ' + t.hours + '<br>' + 'minutes: ' + t.minutes + '<br>' + 'seconds: ' + t.seconds;
-      if(t.total<=0){
-          clearInterval(timeinterval);
-      }
-  }, 1000);
-}
-*/
+let select = document.getElementById("selectOcc"); 
+let options = ["New Baby", "Graduation", "House Warming", "Wedding", "Anniversary", "21st Birthday", "30th Birthday", "50th Birthday" ]; 
 
+for(let i = 0; i < options.length; i++) {
+    let opt = options[i];
+
+    let el = document.createElement("option");
+    el.text = opt;
+    el.value = opt;
+
+    select.add(el); };
+
+
+    $("#call-api-btn").on("click", () => {
+      console.log("Call api button was clicked!");
+    
+      const randomQuote = $.get(`https://api.quotable.io/random`, (data) => {
+        console.log(data);
+        $("#answer-label").html(data.content); 
+      });
+    });
+
+
+/*
 const images = [
   {
     url:
@@ -70,6 +67,7 @@ const images = [
     name: "Baby",
   },
 ];
+
 images.forEach((el) => {
   console.log(el);
   const $button = $(`<button>${el.name}</button>`);
@@ -89,24 +87,11 @@ images.forEach((el) => {
     $(`#${el.name}`).toggle(); 
   });
 });
+*/
 
 
-$("#call-api-btn").on("click", () => {
-  console.log("Call api button was clicked!");
-
-  const randomQuote = $.get(`https://api.quotable.io/random`, (data) => {
-    console.log(data);
-    $("#answer-label").html(data.content); 
-  });
-});
 
 
-$("#test-me").on("click", () => {
-  console.log("this button works!")
-  const input = $("#dates").val();
-  console.log(input);
-  $("#age-label").append(input);
-  
-})
+
 
 
