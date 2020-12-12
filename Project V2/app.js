@@ -1,5 +1,14 @@
 console.log("app is running"); 
 
+$("myForm").on("click", () => {
+    console.log("this button works!")
+    const input = $("#selectOcc").val();
+    console.log(input);
+ 
+  })
+ 
+
+
 
 $(document).ready(function(){
 

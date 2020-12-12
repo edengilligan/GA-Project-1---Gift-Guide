@@ -14,7 +14,6 @@ for(let i = 0; i < options.length; i++) {
     
     select.add(el); };
 
-
     $("#call-api-btn").on("click", () => {
       console.log("Call api button was clicked!");
     
