@@ -1,16 +1,17 @@
 console.log("app is running");
 
-
+// this is referencing the empty select/option in the HTML
 let select = document.getElementById("selectOcc"); 
 let options = ["New Baby", "Graduation", "House Warming", "Wedding", "Anniversary", "21st Birthday", "30th Birthday", "50th Birthday" ]; 
 
 for(let i = 0; i < options.length; i++) {
     let opt = options[i];
-
     let el = document.createElement("option");
+   
+   // these lines allow the values to be displayed, without it is a dropdown with white space only. 
     el.text = opt;
-    el.value = opt;
-
+    //el.value = opt;
+    
     select.add(el); };
 
 
