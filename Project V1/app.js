@@ -1,68 +1,8 @@
+
+// checking that js is linked to html 
 console.log("app is running");
 
-/*
-
-
-// this is referencing the empty select/option in the HTML
-let select = document.getElementById("selectOcc"); 
-let options = ["New Baby", "Graduation", "House Warming", "Wedding", "Anniversary", "21st Birthday", "30th Birthday", "50th Birthday" ]; 
-
-for(let i = 0; i < options.length; i++) {
-  let opt = options[i];
-  let el = document.createElement("option");
- 
-  // these lines allow the values to be displayed, without it is a dropdown with white space only. 
-el.text = opt;
-el.value = opt;
-select.add(el); 
-console.log(el);
-};
-
-
-// Pradosh suggestion code below. does not show any elemnets
-/*
-options.forEach((opt) => { 
-      
-  const $button = $(`<option value=${opt}>${opt}</option>`); 
-$button.on('click', (event) => {
- console.log(event.target.value)
-     
-      $("#selectOcc").click( () => {
-        $(`${opt}`).select(); 
-        console.log(`${opt}`); 
-        $("#container").append(opt);
-      });
-      })
-*/
-/*
-// my original code , shows elements but prints all each time seleciton box is clicked. 
-options.forEach((opt) => { 
-      
-  const $button = $(`<option value=${opt}>${opt}</option>`); 
-  $button.on('click', (event) => {
-   console.log(event.target.value) 
-     
-      $("#selectOcc").click( () => {
-       // $(`${opt}`).select(); 
-        console.log(`${opt}`); 
-        $("#container").append(opt);
-      });
-      })
-
-      
-
-$("#call-api-btn").on("click", () => {
-      console.log("Call api button was clicked!");
-    
-      const randomQuote = $.get(`https://api.quotable.io/random`, (data) => {
-        console.log(data);
-        $("#answer-label").html(data.content); 
-      });
-    });
-
-*/
-
-
+// defining an array of objects
 const images = [
   {
     url:
@@ -106,44 +46,42 @@ const images = [
   },
 ];
 
-let opt = images;
+// forEach is mainly used to traverse an array or collection of elements 
+// forEach is doing the for loop internally so less code is required. less detail 
+// in forEach about how to do the loop, more info about the loop itself
 
-for(let i = 0; i < images.length; i++) {
-  let el = document.createElement("option");
-  let opt = images[i];
- 
-  // these lines allow the values to be displayed, without it is a dropdown with white space only. 
-el.text = opt;
-el.value = opt;
-console.log(el);
-};
-
-
-images.forEach((el) => {
+images.forEach((el, index) => {
+  // call back function within the forEach. 
+  // when someone clicks on the 'each' option this code will run and link up the index number that was selected
+  // el = the elmement/the object itself
+  // index = similar to i in the for loop, it will map to the index of the array. 
+  //eg index 0 is first element in el/images
   console.log(el);
-  const $opt = $(`<option value=${opt}>${opt}</option>`);
-  const $el = `
-        <div> 
-        
-            <div id="${el.name}">
-                <img src=${el.url} /> 
-            </div>
-        </div>
-    `;
-  $("#container").append($opt);
-  $("#container").append($el);
-  $(`#${el.name}`).hide(); 
-  $opt.on("click", () => {
-    console.log("button click");
-    $(`#${el.name}`).toggle(); 
-  });
+  // checking el is defined & that this code is being read 
+  const $opt = $(`<option value=${index}>${el.name}</option>`);
+ // append dropbown id/array values
+  $("#selectOcc").append($opt);
 });
 
-$("#call-api-btn").on("click", () => {
-  console.log("Call api button was clicked!");
+// change event works with dropdowns that detects the clicks on the dropdown selection. 
+$("#selectOcc").on("change", (event) => {
+  // call back function, event option refers to the dom event object of that option. 
+  console.log("select", event.target.value);
+// event is referencing the object, target is referencing the target you click/hoved etc, 
+  console.log(images[event.target.value])
+  // printing the url to the console to check this code is being read 
+  $("#container").empty();
+  // this clears the selection each time a new selection is made 
+  $("#container").append(`<img src=${images[event.target.value].url} />`)
+  // this shows the image once selection is made 
+  })
 
-  const randomQuote = $.get(`https://api.quotable.io/random`, (data) => {
-    console.log(data);
-    $("#answer-label").html(data.content); 
+
+  $("#call-api-btn").on("click", () => {
+    console.log("Call api button was clicked!");
+  
+    const randomQuote = $.get(`https://api.quotable.io/random`, (data) => {
+      console.log(data);
+      $("#answer-label").html(data.content); 
+    });
   });
-});
