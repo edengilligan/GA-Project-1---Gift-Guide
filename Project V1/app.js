@@ -1,5 +1,8 @@
 console.log("app is running");
 
+/*
+
+
 // this is referencing the empty select/option in the HTML
 let select = document.getElementById("selectOcc"); 
 let options = ["New Baby", "Graduation", "House Warming", "Wedding", "Anniversary", "21st Birthday", "30th Birthday", "50th Birthday" ]; 
@@ -7,17 +10,37 @@ let options = ["New Baby", "Graduation", "House Warming", "Wedding", "Anniversar
 for(let i = 0; i < options.length; i++) {
   let opt = options[i];
   let el = document.createElement("option");
- // these lines allow the values to be displayed, without it is a dropdown with white space only. 
+ 
+  // these lines allow the values to be displayed, without it is a dropdown with white space only. 
 el.text = opt;
 el.value = opt;
 select.add(el); 
 console.log(el);
 };
 
+
+// Pradosh suggestion code below. does not show any elemnets
+/*
 options.forEach((opt) => { 
       
-      const $button = $(`<option>${opt}</option>`); 
-      console.log("hello"); 
+  const $button = $(`<option value=${opt}>${opt}</option>`); 
+$button.on('click', (event) => {
+ console.log(event.target.value)
+     
+      $("#selectOcc").click( () => {
+        $(`${opt}`).select(); 
+        console.log(`${opt}`); 
+        $("#container").append(opt);
+      });
+      })
+*/
+/*
+// my original code , shows elements but prints all each time seleciton box is clicked. 
+options.forEach((opt) => { 
+      
+  const $button = $(`<option value=${opt}>${opt}</option>`); 
+  $button.on('click', (event) => {
+   console.log(event.target.value) 
      
       $("#selectOcc").click( () => {
        // $(`${opt}`).select(); 
@@ -28,7 +51,7 @@ options.forEach((opt) => {
 
       
 
-/*$("#call-api-btn").on("click", () => {
+$("#call-api-btn").on("click", () => {
       console.log("Call api button was clicked!");
     
       const randomQuote = $.get(`https://api.quotable.io/random`, (data) => {
@@ -37,8 +60,9 @@ options.forEach((opt) => {
       });
     });
 
+*/
 
-/*
+
 const images = [
   {
     url:
@@ -82,9 +106,22 @@ const images = [
   },
 ];
 
+let opt = images;
+
+for(let i = 0; i < images.length; i++) {
+  let el = document.createElement("option");
+  let opt = images[i];
+ 
+  // these lines allow the values to be displayed, without it is a dropdown with white space only. 
+el.text = opt;
+el.value = opt;
+console.log(el);
+};
+
+
 images.forEach((el) => {
   console.log(el);
-  const $button = $(`<button>${el.name}</button>`);
+  const $opt = $(`<option value=${opt}>${opt}</option>`);
   const $el = `
         <div> 
         
@@ -93,12 +130,20 @@ images.forEach((el) => {
             </div>
         </div>
     `;
-  $("#container").append($button);
+  $("#container").append($opt);
   $("#container").append($el);
   $(`#${el.name}`).hide(); 
-  $button.on("click", () => {
+  $opt.on("click", () => {
     console.log("button click");
     $(`#${el.name}`).toggle(); 
   });
 });
-*/
+
+$("#call-api-btn").on("click", () => {
+  console.log("Call api button was clicked!");
+
+  const randomQuote = $.get(`https://api.quotable.io/random`, (data) => {
+    console.log(data);
+    $("#answer-label").html(data.content); 
+  });
+});
